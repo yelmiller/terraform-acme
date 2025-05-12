@@ -1,6 +1,6 @@
 terraform {
   backend "remote" {
-    organization = "ACME-Infrastructure-demo"
+    organization = "ACME-Infrastructure-Demo"
     workspaces {
       name = "dev-web"
     }
