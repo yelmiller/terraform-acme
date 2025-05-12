@@ -1,7 +1,7 @@
 variable "instance_type" {
   description = "Instance type passed to module"
   type        = string
-  default     = "t3.micro"
+  default     = "t2.small"
 }
 
 module "webserver" {
