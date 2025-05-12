@@ -1,5 +1,15 @@
+ data "aws_ami" "amazon_linux" {
+   most_recent = true
+   owners      = ["amazon"]
+
+  filter {
+     name   = "name"
+     values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+   }
+ }
+
 resource "aws_instance" "web" {
-  ami           = "ami-0c55b159cbfafe1f0"
+  ami           = data.aws_ami.amazon_linux.id
   instance_type = var.instance_type
   tags = {
     Name = "ACME-Web"
